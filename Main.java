@@ -9,9 +9,9 @@ public class Main {
 
         System.out.println("=======================================================================================");
 //======================================================================================================//
-        rectangle rec2 = new rectangle(5,3);
+    //    rectangle rec2 = new rectangle(5,3);
 
-        System.out.println("Площа прямокутника = "+rectangle.rec_square(rec2.a_length, rec2.b_width));
+        System.out.println("Площа прямокутника = "+rectangle.rec_square(rectangle.a_length, rectangle.b_width));
         System.out.println("Периметр прямокутника = "+rectangle.rec_perymeter(3,3));
 
 
