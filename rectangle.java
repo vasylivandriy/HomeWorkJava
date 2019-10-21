@@ -18,6 +18,7 @@ public class rectangle {
         } else {
             System.out.println("Довжина та ширина прямокутника не може бути від'ємною чи дорівнювати'0', введіть інше значення:");
         }
+
     }
    public rectangle(int a_length) {   //сторони рівні
             if (a_length > 0) {
