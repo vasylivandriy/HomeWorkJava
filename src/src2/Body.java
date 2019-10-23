@@ -2,12 +2,10 @@ package src2;
 
 public class Body {
 
-
-
-    private String color;
+   private String color;
    private int weight ;
    private int length ;
-   private int width ;
+   private int width =10;
 
 public Body(){}
 
@@ -33,7 +31,9 @@ public Body(String color, int weight, int length, int width){
 
 
     public void body_width(int width){
-        this.width+=width;}
+        this.width+=width;
+
+        }
 
     public void body_length(int length){
         this.length+=length;}

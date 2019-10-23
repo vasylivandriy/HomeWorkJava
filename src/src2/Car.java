@@ -3,12 +3,12 @@ package src2;
 public class Car {
 
 private String color="red";
-private String model="BMW";
+private String model="BMW_X6";
 private int age = 2015;
 
-    public Car() {
+    public Car(){};
 
-    }
+    public Car(String color, String model, int age){}
 
     public String getColor() { return color; }
     public void setColor(String color) { this.color = color; }
@@ -38,7 +38,7 @@ private int age = 2015;
 
     public void carBody(int a){
 
-   //     body.setWidth(body.body_width(a));
+    body.setWidth(a);
     }
 
     public void carHelm(String color){
