@@ -19,6 +19,7 @@ public class MainTask5 {
 
          Amphibia crocodile1 =  new Crocodile();
 
+         
          crocodile1.sleep();
 
          Amphibia frog1 = new Frog();
