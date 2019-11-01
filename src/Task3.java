@@ -8,16 +8,22 @@ Scanner scan = new Scanner(System.in);
 
 System.out.println("Input number a");
 
-String a = scan.next();
+int a = scan.nextInt();
 
 System.out.println("Input number b");
 
-String b = scan.next();
+int b = scan.nextInt();
 
-int aa = Integer.parseInt(a);
-int bb = Integer.parseInt(b);
+//int result = a==scan.nextInt() ? a : 123;
 
-		System.out.println(Integer.valueOf(a));
+
+
+//int aa = Integer.parseInt(a);
+//int bb = Integer.parseInt(b);
+
+
+
+	//	System.out.println(result);
 
 
 	}

@@ -2,25 +2,29 @@ package Task1;
 
 public enum Month {
 
-	JANUARY(31),
-	FEBRUARY(28),
-	MARCH(31),
-	APRIL, 
-	MAY(31),
-	JUNE,
-	JULY(31),
-	AUGUST(31),
-	SEPTEMBER,
-	OCTOBER(31),
-	NOVEMBER,
-	DECEMBER(30);
+	JANUARY(31,Seasons.WINTER),
+	FEBRUARY(28,Seasons.WINTER),
+	MARCH(31, Seasons.SPRING),
+	APRIL(30, Seasons.SPRING),
+	MAY(31, Seasons.SPRING),
+	JUNE(30, Seasons.SUMMER),
+	JULY(31, Seasons.SUMMER),
+	AUGUST(31, Seasons.SUMMER),
+	SEPTEMBER(30, Seasons.AUTUMN),
+	OCTOBER(31, Seasons.AUTUMN),
+	NOVEMBER(30, Seasons.AUTUMN),
+	DECEMBER(31, Seasons.WINTER);
+
 
 	private int days;
-	private Month season;
+	private Seasons season;
 
-	Month(){this.days=30;}
 
-	Month(int days){this.days=days;}
+	Month(int days, Seasons season){
+		this.days=days;
+	    this.season=season;
+	}
+
 
 	public int getDays() {
 		return days;
