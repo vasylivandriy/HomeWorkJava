@@ -95,11 +95,22 @@ if(var<=0||var>10) System.out.println("Ви ввели неправильне ч
         System.out.println("Input season, please");
         String season2 =scan.next();
 
-        for(Seasons seas : Seasons.values()){
+
+for(Seasons seas : Seasons.values()){
 
             if (seas.name().equalsIgnoreCase(season2)){
-                System.out.println("Yes. Such season exists!");
-                find= true;}
+
+                for(Month month : Month.values())
+
+                    if(month.getSeason()==seas)
+
+                    System.out.println(month.name());
+
+
+                find= true;
+
+
+            }
         }
 
         if(!find) {  System.out.println("O, no!!! Such season does not exists!");   }
