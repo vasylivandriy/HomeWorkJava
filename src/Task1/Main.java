@@ -19,48 +19,18 @@ if(var<=0||var>10) System.out.println("Ви ввели неправильне ч
 
         switch (var) {
 
-            case 1: {
+            case 1:    searchMonth();     break;
 
-                    searchMonth();
-                    showMenu();
-                    searchMonth();
-            break;
-            }
-            case 2: {
-                System.out.println("Вивести всі місяці з такою ж порою року");
+            case 2:  searchSeason();       break;
 
-                System.out.println("Input season, please");
-            String season2 =scan.next();
-boolean find = false;
-            for(Seasons seas : Seasons.values()){
+            case 3: suchNumberDays();        break;
 
-                if (seas.name().equalsIgnoreCase(season2))
-                    System.out.println("Yes. Such season exists!");
+            case 4: lessNumberDays();      break;
 
-                  }
+            case 5: moreNumberDays();      break;
 
-               if(!find)
-                System.out.println("O, no!!! Such season does not exist!");
+            case 6:             break;
 
-
-            }
-            break;
-            case 3: {
-                System.out.println("Вивести всі місяці які мають таку саму кількість днів");
-            }
-            break;
-            case 4: {
-                System.out.println("Вивести на екран всі місяці які мають меншу кількість днів");
-            }
-            break;
-            case 5: {
-                System.out.println("Вивести на екран всі місяці які мають більшу кількість днів");
-            }
-            break;
-            case 6: {
-                System.out.println("");
-            }
-            break;
             case 7: {
                 System.out.println("");
             }
@@ -127,8 +97,132 @@ boolean find = false;
 	}
 
 
+    static private void searchSeason() {
 
+        boolean find = false;
+
+        System.out.println("Input season, please");
+        String season2 =scan.next();
+
+        for(Seasons seas : Seasons.values()){
+
+            if (seas.name().equalsIgnoreCase(season2)){
+                System.out.println("Yes. Such season exists!");
+                find= true;}
+        }
+
+        if(!find) {  System.out.println("O, no!!! Such season does not exist!");   }
     }
+
+
+    static private void suchNumberDays(){
+
+        boolean find1 =false;
+
+        System.out.println("Введіть місяць. Регістр немає значення");
+        String mon = scan.next();
+
+        for (Month month : Month.values()) {
+
+            if (month.name().equalsIgnoreCase(mon)){
+                int day = month.getDays();
+
+                for(Month month1 : Month.values()){
+
+                    if(month1.getDays()==day)
+                    System.out.println(month1);
+                }
+
+
+                find1 =true; }
+
+        }
+
+        if(!find1){ System.out.println("Such month does not exist"); }
+    }
+
+    static private void lessNumberDays() {
+
+        boolean find1 =false;
+
+        System.out.println("Введіть місяць. Регістр немає значення");
+        String mon = scan.next();
+
+        for (Month month : Month.values()) {
+
+            if (month.name().equalsIgnoreCase(mon)){
+                int day = month.getDays();
+
+                for(Month month1 : Month.values()){
+
+                    if(month1.getDays()<day)
+                        System.out.println(month1);
+                }
+
+
+                find1 =true; }
+
+        }
+
+        if(!find1){ System.out.println("Such month does not exist"); }
+    }
+
+
+    static private void moreNumberDays() {
+
+        boolean find1 =false;
+
+        System.out.println("Введіть місяць. Регістр немає значення");
+        String mon = scan.next();
+
+        for (Month month : Month.values()) {
+
+            if (month.name().equalsIgnoreCase(mon)){
+                int day = month.getDays();
+
+                for(Month month1 : Month.values()){
+
+                    if(month1.getDays()>day)
+                        System.out.println(month1);
+                }
+
+
+                find1 =true; }
+
+        }
+
+        if(!find1){ System.out.println("Such month does not exist"); }
+    }
+
+
+    static private void nextSeason() {
+
+        boolean find = false;
+
+        System.out.println("Input season, please");
+        String season2 =scan.next();
+
+        for(Seasons seas : Seasons.values()){
+
+            if (seas.name().equalsIgnoreCase(season2)){
+
+                find= true;}
+        }
+
+        if(!find) {  System.out.println("O, no!!! Such season does not exist!");   }
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
 
 
 
