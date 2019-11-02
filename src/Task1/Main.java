@@ -30,9 +30,9 @@ if(var<=0||var>10) System.out.println("Ви ввели неправильне ч
 
             case 5: moreNumberDays();      break;
 
-            case 6:     nextSeason();        break;
+            case 6: nextSeason();        break;
 
-            case 7:            break;
+            case 7:  beforeSeason();          break;
 
             case 8: monthsEvenDays();            break;
 
@@ -241,10 +241,10 @@ if(var<=0||var>10) System.out.println("Ви ввели неправильне ч
 
             if (seas.name().equalsIgnoreCase(season2)){
 
+                int place = seas.ordinal();
 
-
-                System.out.println();
-
+                if(place==Seasons.values().length-1) System.out.println(Seasons.values()[place - Seasons.values().length + 1]);
+                else   System.out.println(Seasons.values()[place + 1]);
 
                 find= true;}
         }
@@ -253,7 +253,29 @@ if(var<=0||var>10) System.out.println("Ви ввели неправильне ч
     }
 
 
-    static private void beforeSeason() {}
+    static private void beforeSeason() {
+
+        boolean find = false;
+
+        System.out.println("Input season, please");
+        String season2 =scan.next();
+
+        for(Seasons seas : Seasons.values()){
+
+            if (seas.name().equalsIgnoreCase(season2)){
+
+                int place = seas.ordinal();
+
+                if(place==0) System.out.println(Seasons.values()[place + Seasons.values().length - 1]);
+                else   System.out.println(Seasons.values()[place - 1]);
+
+                find= true;}
+        }
+
+        if(!find) {  System.out.println("O, no!!! Such season does not exist!");   }
+
+
+    }
 
 
     static private void monthsEvenDays() {
