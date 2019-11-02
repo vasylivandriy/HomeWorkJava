@@ -30,5 +30,7 @@ public enum Month {
 		return days;
 	}
 
-
-	}
+    public Seasons getSeason() {
+        return season;
+    }
+}

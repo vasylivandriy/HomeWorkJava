@@ -4,35 +4,45 @@ import java.util.Scanner;
 
 public class Main {
 
+  static Scanner scan = new Scanner(System.in);
+
 	public static void main(String[] args) {
 
        showMenu();
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Введіть будь ласка номер дії");
 
+       System.out.println("Введіть будь ласка номер дії");
         int var = scan.nextInt();
-if(var<=0&&var>10) System.out.println("Ви ввели неправильне число.");
+
+if(var<=0||var>10) System.out.println("Ви ввели неправильне число.");
 
     else {
 
         switch (var) {
 
             case 1: {
-                System.out.println("Перевірити чи є такий місяць (місяць вводимо з консолі, передбачити, щоб регістр букв був неважливим )");
 
-                System.out.println("Введіть місяць. Регістр немає значення");
-
-                String mon = scan.next();
-
-                for(Month: Month.values()){
-
-
-                }
-
-                  }
+                    searchMonth();
+                    showMenu();
+                    searchMonth();
             break;
+            }
             case 2: {
                 System.out.println("Вивести всі місяці з такою ж порою року");
+
+                System.out.println("Input season, please");
+            String season2 =scan.next();
+boolean find = false;
+            for(Seasons seas : Seasons.values()){
+
+                if (seas.name().equalsIgnoreCase(season2))
+                    System.out.println("Yes. Such season exists!");
+
+                  }
+
+               if(!find)
+                System.out.println("O, no!!! Such season does not exist!");
+
+
             }
             break;
             case 3: {
@@ -75,12 +85,6 @@ if(var<=0&&var>10) System.out.println("Ви ввели неправильне ч
 
 
 
-
-
-
-
-
-
     }
 
     private static void showMenu() {
@@ -100,6 +104,33 @@ if(var<=0&&var>10) System.out.println("Ви ввели неправильне ч
     }
 
 
-}
+   static private void searchMonth(){
+
+        boolean find1 =false;
+
+        System.out.println("Введіть місяць. Регістр немає значення");
+        String mon = scan.next();
+
+                    for (Month month : Month.values()) {
+
+                if (month.name().equalsIgnoreCase(mon)){
+                    System.out.println("Такий місяць існує");
+
+                find1 =true; }
+
+            }
+
+                    if(!find1){ System.out.println("Such month does not exist"); }
+
+
+
+	}
+
+
+
+    }
+
+
+
 
 
