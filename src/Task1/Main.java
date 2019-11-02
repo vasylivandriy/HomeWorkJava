@@ -11,6 +11,7 @@ public class Main {
        showMenu();
 
        System.out.println("Введіть будь ласка номер дії");
+
         int var = scan.nextInt();
 
 if(var<=0||var>10) System.out.println("Ви ввели неправильне число.");
@@ -92,28 +93,60 @@ if(var<=0||var>10) System.out.println("Ви ввели неправильне ч
 
         boolean find = false;
 
-        System.out.println("Input season, please");
-        String season2 =scan.next();
+        System.out.println("Input month, please");
+        String month2 =scan.next();
+
+        for(Month month : Month.values()){
+
+            if (month.name().equalsIgnoreCase(month2)){
+
+                    System.out.println(month.getSeason());
+
+                    for (Month month1: Month.values()){
+
+                       if (month1.getSeason()==month.getSeason())
+                           System.out.println(month1.name());
 
 
-for(Seasons seas : Seasons.values()){
-
-            if (seas.name().equalsIgnoreCase(season2)){
-
-                for(Month month : Month.values())
-
-                    if(month.getSeason()==seas)
-
-                    System.out.println(month.name());
-
-
+                    }
                 find= true;
-
 
             }
         }
 
         if(!find) {  System.out.println("O, no!!! Such season does not exists!");   }
+
+
+
+
+
+
+
+
+
+//     System.out.println("Input season, please");
+//        String season2 =scan.next();
+
+
+
+//for(Seasons seas : Seasons.values()){
+//
+//            if (seas.name().equalsIgnoreCase(season2)){
+//
+//                for(Month month : Month.values())
+//
+//                    if(month.getSeason()==seas)
+//
+//                    System.out.println(month.name());
+//
+//
+//                find= true;
+//
+//
+//            }
+//        }
+//
+//        if(!find) {  System.out.println("O, no!!! Such season does not exists!");   }
     }
 
 
@@ -208,7 +241,7 @@ for(Seasons seas : Seasons.values()){
 
             if (seas.name().equalsIgnoreCase(season2)){
 
-                int num = seas.ordinal();
+
 
                 System.out.println();
 
