@@ -29,24 +29,15 @@ if(var<=0||var>10) System.out.println("Ви ввели неправильне ч
 
             case 5: moreNumberDays();      break;
 
-            case 6:             break;
+            case 6:     nextSeason();        break;
 
-            case 7: {
-                System.out.println("");
-            }
-            break;
-            case 8: {
-                System.out.println("");
-            }
-            break;
-            case 9: {
-                System.out.println("");
-            }
-            break;
-            case 10: {
-                System.out.println("");
-            }
-            break;
+            case 7:            break;
+
+            case 8: monthsEvenDays();            break;
+
+            case 9:  monthsNonEvenDays();    break;
+
+            case 10: monthHasPairNumberDays();     break;
 
         }
 
@@ -90,7 +81,7 @@ if(var<=0||var>10) System.out.println("Ви ввели неправильне ч
 
             }
 
-                    if(!find1){ System.out.println("Such month does not exist"); }
+                    if(!find1){ System.out.println("Such month does not exists"); }
 
 
 
@@ -111,7 +102,7 @@ if(var<=0||var>10) System.out.println("Ви ввели неправильне ч
                 find= true;}
         }
 
-        if(!find) {  System.out.println("O, no!!! Such season does not exist!");   }
+        if(!find) {  System.out.println("O, no!!! Such season does not exists!");   }
     }
 
 
@@ -206,11 +197,80 @@ if(var<=0||var>10) System.out.println("Ви ввели неправильне ч
 
             if (seas.name().equalsIgnoreCase(season2)){
 
+                int num = seas.ordinal();
+
+                System.out.println();
+
+
                 find= true;}
         }
 
         if(!find) {  System.out.println("O, no!!! Such season does not exist!");   }
     }
+
+
+    static private void beforeSeason() {}
+
+
+    static private void monthsEvenDays() {
+
+        System.out.println("Months with even number of days: ");
+
+        for (Month month : Month.values()) {
+
+           int days = month.getDays();
+
+            if (days%2==0)
+
+                System.out.println(month.name());
+        }
+
+    }
+
+    static private void monthsNonEvenDays() {
+
+        System.out.println("Months with non even number of days: ");
+
+        for (Month month : Month.values()) {
+
+            int days = month.getDays();
+
+            if (days%2!=0)
+
+                System.out.println(month.name());
+        }
+
+    }
+
+
+    static private void monthHasPairNumberDays(){
+
+        boolean find1 =false;
+
+        System.out.println("Введіть місяць. Регістр немає значення");
+        String mon = scan.next();
+
+        for (Month month : Month.values()) {
+
+            if (month.name().equalsIgnoreCase(mon)){
+
+                int days = month.getDays();
+
+                if (days%2==0)     System.out.println("Input month has pair number of days " + month.getDays());
+                else System.out.println("Input month has non pair number of days " + month.getDays());
+
+
+                find1 =true; }
+
+        }
+
+        if(!find1){ System.out.println("Such month does not exists"); }
+
+
+
+    }
+
+
 
 
 
