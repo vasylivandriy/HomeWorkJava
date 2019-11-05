@@ -7,14 +7,30 @@ public class Main {
 
         Methods methods = new Methods();
 
-        Scanner scan = new Scanner(System.in);
 
-        System.out.println("Input number 'a', please");
-        int a = scan.nextInt();
-
-        System.out.println("Input number 'b', please");
-        int b = scan.nextInt();
-
-
+//        methods.div(-3,-5);
+  //     methods.div(0,3);
+//      methods.div(3,0);
+    //    methods.div(3,5);
+       methods.div(0,0);
+//
+//        methods.mul(-3,-5);
+//        methods.mul(0,3);
+//        methods.mul(3,0);
+//        methods.mul(3,5);
+//        methods.mul(0,0);
+//
+//        methods.sum(-3,-5);
+//        methods.sum(0,3);
+//        methods.sum(3,0);
+//        methods.sum(3,5);
+//        methods.sum(0,0);
+//
+//        methods.sub(-3,-5);
+//        methods.sub(0,3);
+//        methods.sub(3,0);
+//        methods.sub(3,5);
+//        methods.sub(0,0);
     }
+
 }

@@ -2,20 +2,20 @@ package Task2;
 
 public class MyException extends Exception{
 
-private int inputIntA;
-private int InputIntB;
+private double inputIntA;
+private double InputIntB;
 
-    public MyException(String message, int inputIntA, int inputIntB) {
+    public MyException(String message, double inputIntA, double inputIntB) {
         super(message);
         this.inputIntA = inputIntA;
         InputIntB = inputIntB;
     }
 
-    public int getInputIntA() {
+    public double getInputIntA() {
         return inputIntA;
     }
 
-    public int getInputIntB() {
+    public double getInputIntB() {
         return InputIntB;
     }
 }
