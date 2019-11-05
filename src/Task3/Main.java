@@ -56,12 +56,14 @@ public class Main {
         }
 
     }
-
-
-
-
     }
 
+
+
+
+    /**
+     * method "Menu"
+     */
     private static void showMenu() {
 
         System.out.println("1: Перевірити чи є такий місяць (місяць вводимо з консолі, передбачити, щоб регістр букв був неважливим )");
@@ -78,7 +80,9 @@ public class Main {
 
     }
 
-
+    /**
+     *  method which check if there is a month entered from the console
+     */
    static private void searchMonth(){
 
         boolean find1 =false;
@@ -97,10 +101,11 @@ public class Main {
 
                     if(!find1){ System.out.println("Such month does not exists"); }
 
-
-
 	}
 
+    /**
+     * method which output all the months with the same time of year
+     */
 
     static private void searchSeason() {
 
@@ -130,38 +135,11 @@ public class Main {
         if(!find) {  System.out.println("O, no!!! Such season does not exists!");   }
 
 
-
-
-
-
-
-
-
-//     System.out.println("Input season, please");
-//        String season2 =scan.next();
-
-
-
-//for(Seasons seas : Seasons.values()){
-//
-//            if (seas.name().equalsIgnoreCase(season2)){
-//
-//                for(Month month : Month.values())
-//
-//                    if(month.getSeason()==seas)
-//
-//                    System.out.println(month.name());
-//
-//
-//                find= true;
-//
-//
-//            }
-//        }
-//
-//        if(!find) {  System.out.println("O, no!!! Such season does not exists!");   }
     }
 
+    /**
+     * method which show all months that have the same number of days
+     */
 
     static private void suchNumberDays(){
 
@@ -189,6 +167,10 @@ public class Main {
         if(!find1){ System.out.println("Such month does not exist"); }
     }
 
+    /**
+     * method which show all months that have fewer days
+     */
+
     static private void lessNumberDays() {
 
         boolean find1 =false;
@@ -215,7 +197,9 @@ public class Main {
         if(!find1){ System.out.println("Such month does not exist"); }
     }
 
-
+    /**
+     * method which show all months that have more days
+     */
     static private void moreNumberDays() {
 
         boolean find1 =false;
@@ -242,7 +226,9 @@ public class Main {
         if(!find1){ System.out.println("Such month does not exist"); }
     }
 
-
+    /**
+     * method which show the next time of year
+     */
     static private void nextSeason() {
 
         boolean find = false;
@@ -265,7 +251,9 @@ public class Main {
         if(!find) {  System.out.println("O, no!!! Such season does not exist!");   }
     }
 
-
+    /**
+     * method which show  the previous time of year
+     */
     static private void beforeSeason() {
 
         boolean find = false;
@@ -290,7 +278,9 @@ public class Main {
 
     }
 
-
+    /**
+     * method which show all months that have an even number of days
+     */
     static private void monthsEvenDays() {
 
         System.out.println("Months with even number of days: ");
@@ -305,6 +295,10 @@ public class Main {
         }
 
     }
+
+    /**
+     * method which show all months that have an odd number of days
+     */
 
     static private void monthsNonEvenDays() {
 
@@ -321,6 +315,9 @@ public class Main {
 
     }
 
+    /**
+     * method which show the month entered from the console has an even or odd number of days
+     */
 
     static private void monthHasPairNumberDays(){
 
