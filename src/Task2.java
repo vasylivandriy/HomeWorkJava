@@ -31,10 +31,8 @@ public class Task2 {
 
             for (int j = 0; j < loudLetters.length; j++)
 
-                if (poem1.charAt(i) == loudLetters[j])
+                if (poem1.toLowerCase().charAt(i) == loudLetters[j])
                     stringBuffer.setCharAt(i, '-');
-
-
         }
         System.out.println(stringBuffer);
     }
