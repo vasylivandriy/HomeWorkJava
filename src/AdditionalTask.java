@@ -48,40 +48,44 @@ public class AdditionalTask {
                         "for I shall already have forgotten you.";
 
 
-        char[] alphabet = new char[35];
-        int[] numbers = new int[35];
-        for (int j = 97; j < 123; j++) {
+//        char[] alphabet = new char[35];
+//        int[] numbers = new int[35];
+//        for (int j = 97; j < 123; j++) {
+//
+//            alphabet[j - 97] = (char) j;
+//
+//            for (int i = 0; i < poetry.length(); i++) {
+//
+//                if (poetry.toLowerCase().charAt(i) == ((char) j)) {
+//
+//                    numbers[j - 97] += 1;
+//                }
+//
+//            }
+//
+//            System.out.println(alphabet[j - 97] + "  -   " + numbers[j - 97]);
+//        }
 
-            alphabet[j - 97] = (char) j;
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        System.out.println(poetry.length());
 
-            for (int i = 0; i < poetry.length(); i++) {
 
-                if (poetry.toLowerCase().charAt(i) == ((char) j)) {
+        int[] alphabet = new int[256];//Має бути масив int, а не char.
 
-                    numbers[j - 97] += 1;
-                }
+        for (char sym : poetry.toLowerCase().toCharArray()) { //Проходимося по кожному елементу масиву charів,
+            // в який ми перетворили наш string poetry(враховуючи  великі букви)
 
-            }
+            alphabet[(int) sym]++;//Ми збільшуємо значення комірки (з індексом коду ASCII визначеного символа) на '1', коли нам трапляється визначений символ
+        }
 
-            System.out.println(alphabet[j - 97] + "  -   " + numbers[j - 97]);
+        for (int i = 97; i < 123; i++) {
+            System.out.println(i + " -  " + ((char) i) + "  -  " + alphabet[i]);//Код символа  -  символ -  кількість символів у даному рядку
+
         }
 
 
-//for (char sym: poetry.toLowerCase().toCharArray()){
-//
-//    alphabet [(int)sym]++;
-//
-//    System.out.print(alphabet[(int)sym]);
-//}
-//
-//        System.out.println();
 
 
-//for (int i=97; i<123; i++){
-//
-//    System.out.println((char)alphabet[i]+" - "+alphabet[i]);
-//}
-//
 
     }
 
