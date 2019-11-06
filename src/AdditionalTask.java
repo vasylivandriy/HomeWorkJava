@@ -47,9 +47,9 @@ public class AdditionalTask {
 
                         "for I shall already have forgotten you.";
 
-        int count = 0;
+
         char[] alphabet = new char[35];
-        int[] numbers = new int[50];
+        int[] numbers = new int[35];
         for (int j = 97; j < 123; j++) {
 
             alphabet[j - 97] = (char) j;
