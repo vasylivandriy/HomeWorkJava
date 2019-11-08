@@ -100,44 +100,20 @@ public class AdditionalTask {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//        System.out.println(poetry1.length());
-//
-//
-//        int[] alphabet = new int[256];
-//
-//        for (char sym : poetry1.toLowerCase().toCharArray()) {
-//
-//            alphabet[(int) sym]++;
-//        }
-//
-//        for (int i = 0; i < 255; i++) {
-//
-//            if (alphabet[i] != 0) {
-//                System.out.println(i + " -  " + ((char) i) + "  -  " + alphabet[i]);
-//
-//            }
-//
-//        }
-//
-
         System.out.println(poetry1.length());
 
 
-        char[] alphabet = new char[256];
-        int[] number = new int[256];
+        int[] alphabet = new int[256];
 
         for (char sym : poetry1.toLowerCase().toCharArray()) {
 
-            alphabet[sym] = sym;
-            number[(int) sym]++;
+            alphabet[(int) sym]++;
         }
 
         for (int i = 0; i < 255; i++) {
 
             if (alphabet[i] != 0) {
-
-
-                System.out.println(i + " -  " + alphabet[i] + "  -  " + number[i]);
+                System.out.println(i + " -  " + ((char) i) + "  -  " + alphabet[i]);
 
             }
 
