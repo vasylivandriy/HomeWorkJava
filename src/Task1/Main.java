@@ -21,7 +21,7 @@ public class Main {
         String[] materials = {"Skin", "Alcantara"};
 
 
-        int size = (int) (Math.random() * 10);
+        int size = (int) ((Math.random() * 10)+1);
 
         ArrayList<Automobile> automobiles = new ArrayList<>();
 
@@ -37,6 +37,13 @@ public class Main {
 
         }
 
+        Collections.sort(automobiles,Comparator.comparing(automobile -> automobile.getAge()));
+
+
+            System.out.println(automobiles.toString());
+
+
+        System.out.println();
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -56,16 +63,8 @@ public class Main {
                 break;
 
             case "b":
-//                    //  Collections.fill(new ArrayList<>(), getRandomValue(names,0,names.length));
-//
-//                    Collections.fill(List automobiles, 5);
-//
-//                    System.out.println(automobiles);
-//
-//                    //       Automobile jhdf = new Automobile(1,2,new Engine(1),new Helm(1, "45656"));
-//
-//
-//                    //  Automobile automobile = new Automobile();
+//                Collections.fill();
+
                 break;
 
             case "c":
@@ -75,7 +74,9 @@ public class Main {
                 switch (field) {
 
                     case "name":
-
+                       //Або так
+                        //  Collections.sort(automobiles,Comparator.comparing(automobile -> automobile.getName()));
+                        //Або так
                         automobiles.sort(Comparator.comparing(Automobile::getName));
 
                         for (int i = 0; i < size; i++) {
@@ -84,6 +85,9 @@ public class Main {
                         }
                         break;
                     case "age":
+
+                      //  Collections.sort(automobiles,Comparator.comparing(automobile -> automobile.getAge()));
+
                         automobiles.sort(Comparator.comparing(Automobile::getAge));
 
                         for (int i = 0; i < size; i++) {

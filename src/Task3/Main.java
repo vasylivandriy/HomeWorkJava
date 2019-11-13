@@ -6,15 +6,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<String> arrayList = new ArrayList<>(20);
 
-        arrayList.add("AAA");
-        System.out.println(arrayList.size());
+        MyArrayList myArrayList = new MyArrayList();
 
-        arrayList.add(1,"EEE");
-        System.out.println(arrayList.size());
+        myArrayList.add("MRT");
 
-        System.out.println(arrayList);
+
+        System.out.println(myArrayList);
+
+
+
+
+
+
 
 
     }
