@@ -10,39 +10,6 @@ public class Main {
     public static void main(String[] args) {
 
 
-//        Enumeration<String> Month1, Season1;
-//
-//        Vector<String> seasons12 = new Vector<>();
-//        Vector<String> month12 = new Vector<>();
-//
-//        seasons12.add("Winter");
-//        seasons12.add("Spring");
-//        seasons12.add("Summer");
-//        seasons12.add("Autumn");
-//
-//        month12.add("JANUARY");
-//        month12.add("FEBRUARY");
-//        month12.add("MARCH");
-//        month12.add("APRIL");
-//        month12.add("MAY");
-//        month12.add("JUNE");
-//        month12.add("JULY");
-//        month12.add("AUGUST");
-//        month12.add("SEPTEMBER");
-//        month12.add("OCTOBER");
-//        month12.add("NOVEMBER");
-//        month12.add("DECEMBER");
-//
-//
-//        Season1 = seasons12.elements();
-//        Month1 = month12.elements();
-
-//
-//        String[] seasons = {"Winter","Spring","Summer","Autumn"};
-//
-//        String[] month = {"JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"};
-//        Integer[] days = {31,28,31,30,31,30,31,31,30,31,30,31};
-
 
         seasonList.add(new Seasons("Winter", "JANUARY", 31));
         seasonList.add(new Seasons("Winter", "FEBRUARY", 28));
@@ -294,6 +261,7 @@ public class Main {
 
                     if (!seas.getSeason().equalsIgnoreCase(seas2.getSeason())) {
                         System.out.println("Next Season is: " + seas2.getSeason());
+
                         break;
                     }
 
@@ -322,12 +290,17 @@ public class Main {
 
             if (seas.getSeason().equalsIgnoreCase(season2)) {
 
-                Seasons place = seasonList.get(seas)
+                int place = seasonList.indexOf(seas);
 
-                if (place == 0) System.out.println(Seasons.values()[place + Seasons.values().length - 1]);
-                else System.out.println(Seasons.values()[place - 1]);
+                for (int i = 0; i<seasonList.size(); i++) {
 
-                find = true;
+                    if (seasonList.get(i).equals(seasonList.get(place))) {
+
+                        if (seasonList.indexOf(seasonList.get(i))==0)
+                        {System.out.println("Before season is: " + seasonList.get( seasonList.size() - 1).getSeason()); break;}
+                        else {System.out.println("Before season is: " + seasonList.get(i - 1).getSeason()); break;}
+                    }
+                find = true;}
             }
         }
 
