@@ -2,13 +2,13 @@ package Task2;
 
 import java.util.*;
 
-public class Commodity extends Goods {
+public class Commodity {
 
 
     static Scanner scan = new Scanner(System.in);
-    static Set<Goods> goodsSet = new HashSet<>();
+    static List<Goods> goodsSet = new ArrayList<>();
 
-    public static void goodMain() {
+    public static void main(String[] args) {
 
 
         goodsSet.add(new Goods("Мило", 10, 5, 500));
@@ -21,22 +21,53 @@ public class Commodity extends Goods {
         goodsSet.add(new Goods("Гумка стиральна", 5, 3, 20));
         goodsSet.add(new Goods("Карта", 100, 50, 250));
 
+        menuShow();
+        System.out.println("Input number");
+        int line = scan.nextInt();
+
+        switch (line) {
+            case 1:
+                addGoods();
+                break;
+            case 2:
+                removeGoods();
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                quitProgram();
+                break;
+
+
+        }
+
+
     }
 
 
-    public static void addGoods() {
+    private static void addGoods() {
 
         System.out.println("Input name");
-        String name1 = scan.nextLine();
+        String name1 = scan.next();
 
         System.out.println("Input length");
-        Integer length1 = scan.nextInt();
+        int length1 = scan.nextInt();
 
         System.out.println("Input width");
-        Integer width1 = scan.nextInt();
+        int width1 = scan.nextInt();
 
         System.out.println("Input weight");
-        Integer weight1 = scan.nextInt();
+        int weight1 = scan.nextInt();
 
 
         System.out.println("Before adding of the goods");
@@ -46,22 +77,75 @@ public class Commodity extends Goods {
 
         goodsSet.add(new Goods(name1, length1, width1, weight1));
 
+
+        System.out.println();
         System.out.println("After adding of the goods");
         for (Goods goods : goodsSet) {
             System.out.println(goods);
         }
+//
+//Object endadd = new Goods(name1, length1, width1, weight1);
+//        return endadd;
 
+    }
+
+    public static void removeGoods() {
+
+        for (Goods goods : goodsSet) {
+            System.out.println(goods);
+        }
+
+        System.out.println("Input name of a goods to remove");
+        String name1 = scan.next();
+
+
+        for (Goods goods : goodsSet) {
+            if (goods.getName().equalsIgnoreCase(name1))
+                goodsSet.remove(goods);
+
+        }
+
+
+        System.out.println();
+        System.out.println("After removing of the goods");
+        for (Goods goods : goodsSet) {
+            System.out.println(goods);
+        }
+
+
+    }
+
+//    public static void changeGoods() {
 //
-//    public void removeGoods () {
+//        for (Goods goods : goodsSet) {
+//            System.out.println(goods);
+//        }
+//
+//        System.out.println("Input name of a goods to change");
+//        String name1 = scan.nextLine();
+//
+//
+//        for (Goods goods : goodsSet) {
+//            if (goods.getName().equalsIgnoreCase(name1))
+//                goodsSet.remove(goods);
+//
+//        }
+//
+//
+//        System.out.println();
+//        System.out.println("After removing of the goods");
+//        for (Goods goods : goodsSet) {
+//            System.out.println(goods);
+//        }
+//
 //    }
 //
-//    public void changeGoods () {
-//    }
+//    public void sortNameGoods() {
 //
-//    public void sortNameGoods () {
-//    }
 //
-//    public void sortLengthGoods () {
+//    }
+
+    //    public void sortLengthGoods () {
 //    }
 //
 //    public void sortWidthGoods () {
@@ -70,12 +154,44 @@ public class Commodity extends Goods {
 //    public void sortWeigthGoods () {
 //    }
 //
-//    public void printElGoods () {
-//    }
-//
-//    public void quitProgram () {
-//
-//        System.exit(1);
-  }
+
+
+
+
+
+    public void printElGoods() {
+
+        for (Goods goods : goodsSet) {
+            System.out.println(goods);
+        }
+
+        System.out.println("Input index of the goods");
+        int indexGoods = scan.nextInt();
+
+        System.out.println(goodsSet.get(indexGoods));
+
     }
+
+
+    public static void quitProgram() {
+
+        System.exit(1);
+    }
+
+    private static void menuShow() {
+
+        System.out.println("1. Додати товар");
+        System.out.println("2. видалити товар");
+        System.out.println("3. Замінити товар");
+        System.out.println("4. Сортувати за назвою");
+        System.out.println("5. Сортувати за довжиною");
+        System.out.println("6. Сортувати за шириною");
+        System.out.println("7. Сортувати за вагою");
+        System.out.println("8. Вивести і-й елемент колекції");
+        System.out.println("9. Вийти з програми");
+
+    }
+
+
+}
 
