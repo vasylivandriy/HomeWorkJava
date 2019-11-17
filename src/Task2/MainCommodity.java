@@ -17,15 +17,26 @@ public class MainCommodity {
         while (line.equalsIgnoreCase("quit")) {
 
             switch (line) {
-                case "1" : break;
-                case "2" : break;
-                case "3" : break;
-                case "4" : break;
-                case "5" : break;
-                case "6" : break;
-                case "7" : break;
-                case "8" : break;
-                case "9" : commodity.quitProgram();  break;
+                case "1":
+                    commodity.addGoods();
+                    break;
+                case "2":
+                    break;
+                case "3":
+                    break;
+                case "4":
+                    break;
+                case "5":
+                    break;
+                case "6":
+                    break;
+                case "7":
+                    break;
+                case "8":
+                    break;
+                case "9":
+//                    commodity.quitProgram();
+                    break;
 
 
             }
@@ -33,22 +44,20 @@ public class MainCommodity {
         }
 
 
-
-
     }
 
-private static void menuShow(){
+    private static void menuShow() {
 
-    System.out.println(
-            "1. Додати товар" +
-            "2. видалити товар" +
-            "3. Замінити товар" +
-            "4. Сортувати за назвою" +
-            "5. Сортувати за довжиною" +
-            "6. Сортувати за шириною" +
-            "7. Сортувати за вагою" +
-            "8. Вивести і-й елемент колекції" +
-            "9. Вийти з програми");
+        System.out.println(
+                "1. Додати товар" +
+                        "2. видалити товар" +
+                        "3. Замінити товар" +
+                        "4. Сортувати за назвою" +
+                        "5. Сортувати за довжиною" +
+                        "6. Сортувати за шириною" +
+                        "7. Сортувати за вагою" +
+                        "8. Вивести і-й елемент колекції" +
+                        "9. Вийти з програми");
 
-}
+    }
 }

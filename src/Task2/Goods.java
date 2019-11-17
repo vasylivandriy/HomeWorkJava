@@ -7,7 +7,7 @@ public class Goods {
     private Integer width;
     private Integer weight;
 
-    public Goods(){}
+public Goods(){}
 
     public Goods(String name, Integer length, Integer width, Integer weight) {
         this.name = name;
