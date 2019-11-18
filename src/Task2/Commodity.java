@@ -199,12 +199,6 @@ public class Commodity {
                 System.out.println(g);
         }
 
-        while (iterator.hasNext()) {
-
-            if (iterator.next().equals(inputGoods))
-
-                System.out.println(iterator.next());
-        }
     }
 
 
