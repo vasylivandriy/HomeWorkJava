@@ -1,22 +1,29 @@
+import java.util.Random;
 import java.util.Scanner;
 
-public class Delegate extends Human {
+public class Delegate  {
 
 
     private String surname;
     private String name;
-    private int age;
+    private Integer age;
     private boolean bribeTaker;
-    private int bribeSize;
+    private Integer bribeSize;
+    private String faction;
     private Human human;
 
-    public Delegate(String surname, String name, int age, boolean bribeTaker, Human human) {
+
+    public Delegate(){}
+
+    public Delegate(String surname, String name, Integer age, boolean bribeTaker, String faction, Human human) {
         this.surname = surname;
         this.name = name;
         this.age = age;
         this.bribeTaker = bribeTaker;
+        this.faction = faction;
         this.human = human;
     }
+
 
     public String getSurname() {
         return surname;
@@ -66,24 +73,32 @@ public class Delegate extends Human {
         this.human = human;
     }
 
+    public String getFaction() {
+        return faction;
+    }
+
+    public void setFaction(String faction) {
+        this.faction = faction;
+    }
+
     Scanner scan = new Scanner(System.in);
 
-    private int bribeGive() {
+
+    public void bribeGive(Boolean bribeTaker) {
 
         if (!bribeTaker) {
             System.out.println("Цей депутат не бере хабарів");
-            return 0;
-        } else {
 
+        } else {
             System.out.println("Введіть суму хабаря, яку ви даєте");
             int bribeSize12 = scan.nextInt();
 
-            if (bribeSize > 5000) {
+            if (bribeSize12 > 5000) {
                 System.out.println("Police arrest a delegate");
-                return 0;
+
             } else {
-                bribeSize = bribeSize12;
-                return bribeSize;
+               setBribeSize(bribeSize12);
+
             }
         }
     }
@@ -97,7 +112,9 @@ public class Delegate extends Human {
                 ", age=" + age +
                 ", bribeTaker=" + bribeTaker +
                 ", bribeSize=" + bribeSize +
+                ", faction=" + faction +
                 ", human=" + human +
                 '}';
     }
 }
+

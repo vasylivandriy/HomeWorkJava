@@ -3,6 +3,11 @@ public class Human {
     private int weight;
     private int height;
 
+    public Human(int weight, int height) {
+        this.weight = weight;
+        this.height = height;
+    }
+
     public int getWeight() {
         return weight;
     }
@@ -26,4 +31,5 @@ public class Human {
                 ", height=" + height +
                 '}';
     }
+
 }
