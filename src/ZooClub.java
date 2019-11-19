@@ -17,8 +17,6 @@ public class ZooClub {
         listPet.add(new Animal("Dog", "Ostap"));
 
 
-//hashMap.put(new Person("Anton",56),new Animal("Cat","Barsik"));
-//hashMap.put(new Person("Anton",56),new Animal("Cat","Barsik"));
         hashMap.put(new Person("Anton", 56), listPet);
         hashMap.put(new Person("Taras", 18), listPet);
         hashMap.put(new Person("Vadym", 36), listPet);
@@ -36,16 +34,22 @@ public class ZooClub {
                 addPersonMap();
                 break;
             case 2:
+                addPetToPerson();
                 break;
             case 3:
+                removePetToPerson();
                 break;
             case 4:
+                removePerson();
                 break;
             case 5:
+                removePetForAllPerson();
                 break;
             case 6:
+                printZooClub();
                 break;
             case 7:
+                programExit();
                 break;
 
 
@@ -54,7 +58,7 @@ public class ZooClub {
 
     }
 
-    public static void showMenu() {
+    private static void showMenu() {
 
         System.out.println("1. Додати учасника клубу");
         System.out.println("2. Додати тварину до учасника клубу");
@@ -67,7 +71,7 @@ public class ZooClub {
     }
 
 
-    public static void addPersonMap() {
+    private static void addPersonMap() {
 
         for (Map.Entry<Object, Object> map : setMap)
 
@@ -85,8 +89,61 @@ public class ZooClub {
         for (Map.Entry<Object, Object> map : setMap)
 
             System.out.println(map);
+    }
 
+
+
+
+    private static void addPetToPerson() {
+
+        for (Map.Entry<Object, Object> map : setMap)
+            System.out.println(map);
+
+        System.out.println("Input name of a person for adding of a pet");
+        String namePerson = scan.next();
+
+        System.out.println("Input type of an animal - cat or dog");
+        String typeAnimal = scan.next();
+
+        System.out.println("Input name of an animal");
+        String nameAnimal = scan.next();
+
+        for (Map.Entry<Object, Object> map : setMap)
+
+            if (map.getKey(new))
+
+                System.out.println(map);
 
     }
+
+
+    private static void removePetToPerson() {
+    }
+
+    private static void removePerson() {
+    }
+
+    private static void removePetForAllPerson() {
+    }
+
+
+
+
+
+
+
+
+    private static void printZooClub() {
+
+        for (Map.Entry<Object, Object> map : setMap)
+            System.out.println(map);
+
+    }
+
+    private static void programExit() {
+
+        System.exit(0);
+    }
+
 
 }
