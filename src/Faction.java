@@ -4,14 +4,16 @@ public class Faction {
 
     static Scanner scan = new Scanner(System.in);
 
-    static List<String> factionsList = new ArrayList<>();
+   static List<String> factionsList = new ArrayList<>();
 
     static public ArrayList<Delegate> delegatesArray = new ArrayList<>();
 
-    static Iterator<Delegate> delegateIterator = delegatesArray.iterator();
+ //   static Iterator<Delegate> delegateIterator = delegatesArray.iterator();
 
 
     public static void main(String[] args) {
+
+
 
         factionsList.add("Україна");
         factionsList.add("До перемоги");
@@ -34,13 +36,13 @@ public class Faction {
         delegatesArray.add(new Delegate("Перебийніс", "Микола", 55, false, "За Європу", new Human(95, 178)));
         delegatesArray.add(new Delegate("Гаврилюк", "Гаврило", 57, true, "За Європу", new Human(77, 180)));
 
-        cleanAllDelegatesF();
+
 
 
     }
 
 
-    public void addDelegate() {
+    public static void addDelegate() {
 
         System.out.println(
 
