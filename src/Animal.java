@@ -3,6 +3,10 @@ public class Animal {
     private String typeAnimal;
     private String nameAnimal;
 
+
+    public Animal() {
+    }
+
     public Animal(String typeAnimal, String nameAnimal) {
         this.typeAnimal = typeAnimal;
         this.nameAnimal = nameAnimal;

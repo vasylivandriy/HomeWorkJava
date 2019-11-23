@@ -2,15 +2,22 @@ import java.util.*;
 
 public class ZooClub {
 
-    static List<Object> listPet = new LinkedList<>();
-    static Map<Object, Object> hashMap = new HashMap<>();
-    static Set<Map.Entry<Object, Object>> setMap = hashMap.entrySet();
+    static List<Animal> listPet = new LinkedList<>();
+
+    static Map<Person, Object> hashMap = new HashMap<>();
+
+
+    static Set<Map.Entry<Person, Object>> setMap = hashMap.entrySet();
+
+
+    static Iterator<Map.Entry<Person, Object>> iterator = hashMap.entrySet().iterator();
+
     static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
 
 
-        listPet.add(new Animal("Cat", "Sanra"));
+        listPet.add(new Animal("Cat", "Sara"));
         listPet.add(new Animal("Cat", "Barsik"));
         listPet.add(new Animal("Cat", "Vovk"));
         listPet.add(new Animal("Dog", "Mamba"));
@@ -31,19 +38,19 @@ public class ZooClub {
         switch (line) {
 
             case 1:
-                addPersonMap();
+                addPersonToMap();
                 break;
             case 2:
                 addPetToPerson();
                 break;
             case 3:
-                removePetToPerson();
+                // removePetOfPerson();
                 break;
             case 4:
-                removePerson();
+                removePersonOfMap();
                 break;
             case 5:
-                removePetForAllPerson();
+                removePetOfAllPerson();
                 break;
             case 6:
                 printZooClub();
@@ -71,9 +78,9 @@ public class ZooClub {
     }
 
 
-    private static void addPersonMap() {
+    private static void addPersonToMap() {
 
-        for (Map.Entry<Object, Object> map : setMap)
+        for (Map.Entry<Person, Object> map : setMap)
 
             System.out.println(map);
 
@@ -82,60 +89,125 @@ public class ZooClub {
         String personName = scan.next();
 
         System.out.println("Input person age");
-        Integer personage = scan.nextInt();
+        Integer personAge = scan.nextInt();
 
-        hashMap.put(new Person(personName, personage), listPet);
+        hashMap.put(new Person(personName, personAge), listPet);
 
-        for (Map.Entry<Object, Object> map : setMap)
+        for (Map.Entry<Person, Object> map : setMap)
 
             System.out.println(map);
     }
-
-
 
 
     private static void addPetToPerson() {
 
-        for (Map.Entry<Object, Object> map : setMap)
+
+        for (Map.Entry<Person, Object> map : setMap)
             System.out.println(map);
+//
+//        System.out.println("Input name of a person for adding of a pet");
+//        String namePerson = scan.next();
+//
+//        System.out.println("Input age of a person for adding of a pet");
+//        Integer agePerson = scan.nextInt();
 
-        System.out.println("Input name of a person for adding of a pet");
-        String namePerson = scan.next();
 
-        System.out.println("Input type of an animal - cat or dog");
-        String typeAnimal = scan.next();
+//                System.out.println("Input type of an animal - cat or dog");
+//                String typeAnimal = scan.next();
+//
+//                System.out.println("Input name of an animal");
+//                String nameAnimal = scan.next();
 
-        System.out.println("Input name of an animal");
-        String nameAnimal = scan.next();
 
-        for (Map.Entry<Object, Object> map : setMap)
+        for (Map.Entry<Person, Object> map1 : setMap) {
+            if (map1.getKey().getName().equalsIgnoreCase("olha") && map1.getKey().getAge().equals(45)) {
 
-            if (map.getKey(new))
+                listPet.add(new Animal("cat", "ssdgsgsdg"));
+                map1.setValue(listPet);
 
-                System.out.println(map);
+            }
+        }
 
+        System.out.println();
+        for (Map.Entry<Person, Object> map2 : setMap)
+
+            System.out.println(map2);
     }
 
 
     private static void removePetToPerson() {
-    }
 
-    private static void removePerson() {
-    }
 
-    private static void removePetForAllPerson() {
     }
 
 
+    private static void removePersonOfMap() {
+
+        for (Map.Entry<Person, Object> map : setMap)
+
+            System.out.println(map);
+
+        System.out.println("Input person name for removing");
+
+        String personName = scan.next();
+
+        System.out.println("Input person age");
+        Integer personAge = scan.nextInt();
+
+        for (Map.Entry<Person, Object> map : setMap) {
+
+            if (map.getKey().getName().equalsIgnoreCase(personName) || map.getKey().getAge().equals(personAge)) {
+
+                setMap.remove(map);
+            }
+        }
+
+        for (Map.Entry<Person, Object> map : setMap)
+
+            System.out.println(map);
 
 
+    }
 
 
+    private static void removePetOfAllPerson() {
+
+        System.out.println("Before removing pets");
+        for (Map.Entry<Person, Object> map : setMap) {
+            System.out.println(map);
+        }
+        System.out.println();
+
+        System.out.println("Input name of a pet for removing");
+        String namePet = scan.next();
+
+        int a = 0;
+
+        for (Animal animal1 : listPet) {
+
+            if (animal1.getNameAnimal().equalsIgnoreCase(namePet)) {
+
+                a = listPet.indexOf(animal1);
+                break;
+            }
+        }
+
+        System.out.println("Index of a pet for removing");
+
+        listPet.remove(a);
+
+        System.out.println();
+        System.out.println("After removing pets");
+        for (Map.Entry<Person, Object> map : setMap) {
+            System.out.println(map);
+        }
+
+    }
 
 
     private static void printZooClub() {
 
-        for (Map.Entry<Object, Object> map : setMap)
+        for (Map.Entry<Person, Object> map : setMap)
             System.out.println(map);
 
     }
