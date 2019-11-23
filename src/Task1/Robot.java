@@ -5,13 +5,21 @@ import java.io.Serializable;
 
 public class Robot extends Human implements Serializable {
 
-    private String name = "Robocop";
-    private int legs = 2;
-    private int hands = 2;
+   private String name = "Robocop";
+   private int legs;
+    private int hands;
     private Human human;
 
     public Robot() {
     }
+
+    public Robot(String name, int legs, int hands ) {
+        this.name = name;
+        this.legs = legs;
+        this.hands = hands;
+
+    }
+
 
     public Robot(String name, int legs, int hands, Human human) {
         this.name = name;
@@ -50,6 +58,16 @@ public class Robot extends Human implements Serializable {
 
     public void setHands(int hands) {
         this.hands = hands;
+    }
+
+    @Override
+    public String toString() {
+        return "Robot{" +
+                "name='" + name + '\'' +
+                ", legs=" + legs +
+                ", hands=" + hands +
+                ", human=" + human +
+                '}';
     }
 }
 

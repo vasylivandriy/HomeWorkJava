@@ -27,4 +27,12 @@ public abstract class Human implements RobotInterface {
     public void setWeight(int weight) {
         this.weight = weight;
     }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "height=" + height +
+                ", weight=" + weight +
+                '}';
+    }
 }

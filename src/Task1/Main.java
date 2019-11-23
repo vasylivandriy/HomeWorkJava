@@ -1,16 +1,17 @@
 package Task1;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Modifier;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException {
 
-        Robot robot = new Robot();
-        System.out.println("With object");
-        System.out.println("Class: " + robot.getClass());
-        System.out.println("HashCode: " + robot.hashCode());
-        System.out.println();
+       // Robot robot = new Robot();
+//        System.out.println("With object");
+//        System.out.println("Class: " + robot.getClass());
+//        System.out.println("HashCode: " + robot.hashCode());
+//        System.out.println();
 
 
         Class<Robot> robotClass = Robot.class;
@@ -78,15 +79,56 @@ public class Main {
         System.out.println();
 
 
-    Constructor<?> constructor = constructors[0];
-    Class<?>[] getParam = constructor.getParameterTypes();
+    Constructor<?> constructorSuper = constructorsSuper[0];
+    Class<?>[] getParamSuper = constructorSuper.getParameterTypes();
 
-    for(Class param: getParam){
-        System.out.println( param);
+    for(Class paramSuper: getParamSuper){
+        System.out.println(23 + ": for constructorsSuper (Human) get parameterTypes:  " +paramSuper);
+    }
+        System.out.println();
+
+        Constructor<?> constructor = constructors[0];
+        Class<?>[] parameterTypes  = constructor.getParameterTypes();
+
+        for(Class param: parameterTypes){
+            System.out.println(23.1 + ": for constructors (Robot) get parameterTypes:  " +param);
+        }
+
+        System.out.println();
+
+        Constructor<Robot> constructor1 = robotClass.getConstructor(String.class, int.class, int.class, Human.class);
+
+        System.out.println(24 + ": constructor class Robot:  " +constructor1);
+        System.out.println();
+
+/////////////////////////////////////////TASK 2///////////////////////////////////////////////////////////////////////////////////////////////
+        Robot robot1 = robotClass.getDeclaredConstructor(String.class,int.class,int.class).newInstance("Afera",12,13);
+
+        System.out.println(25+" constructor with input parameters: "+robot1);
+
+        Robot robot2 = robotClass.getDeclaredConstructor(String.class,int.class,int.class,Human.class).newInstance("Afera", 12, 13, new Human(23,23) {
+            @Override
+            public void setHeight(int height) {
+                super.setHeight(height);
+            }
+
+            @Override
+            public void setWeight(int weight) {
+                super.setWeight(weight);
+            }
+        });
+
+        System.out.println(26+" constructor with input parameters: "+robot2);
+
+        Robot robot3 = robotClass.getDeclaredConstructor().newInstance();
+        System.out.println(27+" constructor with current parameters: "+robot3);
+
+        System.out.println();
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
     }
 
 
-
-    }
 
 }
