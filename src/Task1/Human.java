@@ -1,13 +1,13 @@
 package Task1;
 
-public abstract class Human {
+public abstract class Human implements RobotInterface {
 
     private int height;
     private int weight;
 
     public Human(){}
 
-    public Human(int height, int weight) {
+    public  Human(int height, int weight) {
         this.height = height;
         this.weight = weight;
     }

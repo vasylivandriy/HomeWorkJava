@@ -8,13 +8,24 @@ public class Robot extends Human implements Serializable {
     private String name = "Robocop";
     private int legs = 2;
     private int hands = 2;
+    private Human human;
 
-    public Robot(){}
+    public Robot() {
+    }
 
-    public Robot(String name, int legs, int hands) {
+    public Robot(String name, int legs, int hands, Human human) {
         this.name = name;
         this.legs = legs;
         this.hands = hands;
+        this.human = human;
+    }
+
+    public Robot(int height, int weight, String name, int legs, int hands, Human human) {
+        super(height, weight);
+        this.name = name;
+        this.legs = legs;
+        this.hands = hands;
+        this.human = human;
     }
 
     public String getName() {
