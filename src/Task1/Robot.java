@@ -74,7 +74,7 @@ public class Robot extends Human implements Serializable {
 public void myMethod(String a, int[] array){
 
     System.out.println(a);
-
+    System.out.println();
     for (int arr:array){
         System.out.println(arr);
     }

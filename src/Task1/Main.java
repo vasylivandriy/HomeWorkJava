@@ -153,12 +153,15 @@ for (Method method:robotClassDeclaredMethods){
         System.out.println(31+" Methods:  "+method1);
 
 }
-        System.out.println();
+     System.out.println();
 
-    robotClassDeclaredMethods[4].invoke(robotClass,2,new Object[]{2,5,-3,9,13});
 
-        System.out.println(robotClass);
+        System.out.println(robotClassMethods[5]);
 
+
+
+
+        robotClassMethods[5].invoke(robot,new Object[]{});
 
 
 
