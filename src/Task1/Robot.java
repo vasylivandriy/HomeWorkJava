@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 public class Robot extends Human implements Serializable {
 
-   private String name = "Robocop";
+   public String name = "Robocop";
    private int legs;
     private int hands;
     private Human human;
@@ -60,6 +60,7 @@ public class Robot extends Human implements Serializable {
         this.hands = hands;
     }
 
+
     @Override
     public String toString() {
         return "Robot{" +
@@ -68,6 +69,25 @@ public class Robot extends Human implements Serializable {
                 ", hands=" + hands +
                 ", human=" + human +
                 '}';
+    }
+
+public void myMethod(String a, int[] array){
+
+    System.out.println(a);
+
+    for (int arr:array){
+        System.out.println(arr);
+    }
+}
+
+    public void myMethodOther(String[] array1){
+
+        for (String arr1:array1){
+            System.out.println(arr1);
+
+    }
+
+
     }
 }
 
