@@ -156,14 +156,18 @@ for (Method method:robotClassDeclaredMethods){
      System.out.println();
 
 
+ ////////////////////TASK 3///////////////////////////////////////////////////////////////////////////////////////
+
+        System.out.println(robotClassMethods[4]);
+
+
+        robotClassMethods[4].invoke(robot, "Aladdin",new int[]{2,3,5});
+        System.out.println();
+
         System.out.println(robotClassMethods[5]);
 
 
-
-
-        robotClassMethods[5].invoke(robot,new Object[]{});
-
-
+        robotClassMethods[5].invoke(robot, "khkh", new String[]{"a", "b", "c", "d", "e"});
 
 
     }

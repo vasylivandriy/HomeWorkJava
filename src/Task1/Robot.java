@@ -80,8 +80,9 @@ public void myMethod(String a, int[] array){
     }
 }
 
-    public void myMethodOther(String[] array1){
+    public void myMethodOther(String n, String[] array1){
 
+        System.out.println(n);
         for (String arr1:array1){
             System.out.println(arr1);
 
