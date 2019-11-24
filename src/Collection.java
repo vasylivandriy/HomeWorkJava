@@ -11,34 +11,31 @@ public class Collection {
 
 /////////////////////////////////////////////////////////////////////////////
 
-//    public class InnerClass1 implements IteratorExample {
-//
-//
-//       private int index1 = 0;
-//        private Object[] myArray1;
-
-//        @Override
-//        public Object next() {
-
-//            for (Object i =0;i<numbers.length;i++) {
-//          if (numbers[i]%2!=0){
-//
-//              numbers[i]=0;
-//          }
-
-//                     }
-//
-//            return myArray1[index1++];
-//        }
-//
-//        @Override
-//        public boolean hasNext() {
-//
-//            return index1 < myArray1.length-1;
-//        }
+    public class InnerClass1 implements IteratorExample {
 
 
-    //  }
+       private int index1 = -1;
+
+
+        @Override
+        public Object next() {
+
+            index1+=1;
+            if (index1%2==0) {
+
+                return numbers[index1];
+            }
+        else return numbers[index1]=0;
+        }
+
+        @Override
+        public boolean hasNext() {
+
+            return index1 < numbers.length-1;
+        }
+
+
+      }
 
 
     ////////////////////////////////////////////////////////////////////
@@ -53,7 +50,7 @@ public class Collection {
             index2 -= 2;
             if (index2 >= 0)
                 return numbers[index2];
-            else return "The end of array";
+            else return null;
 
         }
 
