@@ -167,7 +167,7 @@ for (Method method:robotClassDeclaredMethods){
         System.out.println(robotClassMethods[5]);
 
 
-        robotClassMethods[5].invoke(robot, "khkh", new String[]{"a", "b", "c", "d", "e"});
+        robotClassMethods[5].invoke(robot, new Object[]{new String[]{"a", "b", "c", "d", "e"}});
 
 
     }
