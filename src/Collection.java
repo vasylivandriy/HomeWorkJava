@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Collection {
 
@@ -14,28 +16,27 @@ public class Collection {
     public class InnerClass1 implements IteratorExample {
 
 
-       private int index1 = -1;
+        private int index1 = -1;
 
 
         @Override
         public Object next() {
 
-            index1+=1;
-            if (index1%2==0) {
+            index1 += 1;
+            if (index1 % 2 == 0) {
 
                 return numbers[index1];
-            }
-        else return numbers[index1]=0;
+            } else return numbers[index1] = 0;
         }
 
         @Override
         public boolean hasNext() {
 
-            return index1 < numbers.length-1;
+            return index1 < numbers.length - 1;
         }
 
 
-      }
+    }
 
 
     ////////////////////////////////////////////////////////////////////
@@ -50,7 +51,8 @@ public class Collection {
             index2 -= 2;
             if (index2 >= 0)
                 return numbers[index2];
-            else return null;
+            else return "Кінець";
+
 
         }
 
@@ -74,6 +76,43 @@ public class Collection {
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
+
+    public IteratorExample task4Local() {
+
+        class LocalClass implements IteratorExample {
+
+
+            private int index3 = -1;
+
+            @Override
+            public Object next() {
+
+                index3 += 1;
+
+                if ((index3 + 1) % 5 == 0 && index3 % 2 == 0) {
+
+
+                    numbers[index3] = (Integer) numbers[index3] - 100;
+
+                    return numbers[index3];
+                } else return numbers[index3];
+            }
+
+            @Override
+            public boolean hasNext() {
+
+                return index3 < numbers.length - 1;
+            }
+
+        }
+
+
+        LocalClass localClass = new LocalClass();
+
+        return localClass;
+
+
+    }
 
 
 }
