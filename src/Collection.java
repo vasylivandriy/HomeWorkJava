@@ -2,16 +2,16 @@ import java.util.Arrays;
 
 public class Collection {
 
-    public static Object[] numbers;
+    public static Number[] numbers;
 
 
-    public Collection(Object[] numbers) {
+    public Collection(Number[] numbers) {
         this.numbers = numbers;
     }
 
-    public Collection() {
-
-    }
+//    public Collection() {
+//
+//    }
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -134,28 +134,28 @@ public class Collection {
     }
 
 
-IteratorExample iteratorExampleAnonimus = new IteratorExample() {
-
-   private int index5 = numbers.length;
-
-    @Override
-    public Object next() {
-
-        index5 -= 3;
-
-        if (index5>=0&&((Integer) numbers[index5]) %2!= 0)
-
-            return numbers[index5];
-
-        else return " ";
-
-    }
-
-    @Override
-    public boolean hasNext() {
-        return index5>=0;
-    }
-};
+// IteratorExample iteratorExampleAnonimus = new IteratorExample() {
+//
+//
+//   private int index5 = numbers.length;
+//    @Override
+//    public Object next() {
+//
+//        index5 -= 3;
+//
+//        if (index5>=0&&((Integer) numbers[index5]) %2!= 0)
+//
+//            return numbers[index5];
+//
+//        else return " ";
+//
+//    }
+//
+//    @Override
+//    public boolean hasNext() {
+//        return index5>=0;
+//    }
+//};
 
 }
 
