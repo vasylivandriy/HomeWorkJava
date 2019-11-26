@@ -1,14 +1,16 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Collection {
 
-    public Object[] numbers;
+    public static Object[] numbers;
 
 
     public Collection(Object[] numbers) {
         this.numbers = numbers;
+    }
+
+    public Collection() {
+
     }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -68,13 +70,6 @@ public class Collection {
     }
 
 
-    @Override
-    public String toString() {
-        return "Collection{" +
-                "numbers=" + Arrays.toString(numbers) +
-                '}';
-    }
-
 //////////////////////////////////////////////////////////////////////////////////////
 
     public IteratorExample task4Local() {
@@ -114,5 +109,53 @@ public class Collection {
 
     }
 
+    static class StaticClass implements IteratorExample {
+
+        private int index4 = -1;
+
+        @Override
+        public Object next() {
+
+            index4+=2;
+            if ((index4 < numbers.length - 1)&&(Integer) numbers[index4] % 2 == 0) {
+
+               numbers[index4] = (Integer) numbers[index4] + 1;
+
+                return numbers[index4];
+            }
+            else return null;
+
+        }
+
+        @Override
+        public boolean hasNext() {
+            return index4 < numbers.length - 1;
+        }
+    }
+
+
+IteratorExample iteratorExampleAnonimus = new IteratorExample() {
+
+   private int index5 = numbers.length;
+
+    @Override
+    public Object next() {
+
+        index5 -= 3;
+
+        if (index5>=0&&((Integer) numbers[index5]) %2!= 0)
+
+            return numbers[index5];
+
+        else return " ";
+
+    }
+
+    @Override
+    public boolean hasNext() {
+        return index5>=0;
+    }
+};
 
 }
+

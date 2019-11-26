@@ -30,8 +30,6 @@ public class Main {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
         System.out.println("Local class");
 
-
-
         Collection collection = new Collection(new Object[]{5, 9, 23, -8, 2, 1, 7, -9,-18,89,65,156,23,45,0});
 
         Object local = collection.task4Local();
@@ -42,7 +40,25 @@ public class Main {
         }
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+        System.out.println("Static class");
 
+        Collection collection1 = new Collection(new Object[]{5, 10, 23, -8, 2, 1, 7, 0,-18,89,65,166,23,50,0});
+
+          Collection.StaticClass staticClass = new Collection.StaticClass();
+
+        while (staticClass.hasNext()){
+
+            System.out.println(staticClass.next());
+        }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+        System.out.println("Anonimus class");
+
+        IteratorExample iteratorAnonimus  = new Collection(new Object[]{5, 9, 23, -8, 2, 1, 7, -9,-18,89,65,156,23,45,0}).iteratorExampleAnonimus;
+
+while (iteratorAnonimus.hasNext()){
+    System.out.println(iteratorAnonimus.next());
+}
 
     }
 
