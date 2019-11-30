@@ -1,10 +1,11 @@
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MethodsTask3 {
 
 
-    public void serializeTask3(List<Employee> employe) throws IOException {
+    public void serializeTask3(List employe) throws IOException {
 
         File file = new File("task2.txt");
 
@@ -27,7 +28,7 @@ public class MethodsTask3 {
 FileInputStream fileInputStream = new FileInputStream("task2.txt");
       ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
-        List<Employee> employe = (List<Employee>) objectInputStream.readObject();
+       List employe = (List) objectInputStream.readObject();
 
     fileInputStream.close();
     objectInputStream.close();
