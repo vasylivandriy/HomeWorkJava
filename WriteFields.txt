@@ -1,0 +1,6 @@
+name
+java.lang.String Task1.AnnotationMy.name
+Taras
+age
+int Task1.AnnotationMy.age
+45
